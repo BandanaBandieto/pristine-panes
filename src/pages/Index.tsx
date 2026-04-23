@@ -1,16 +1,295 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check } from "lucide-react";
+import heroImage from "@/assets/hero-window.jpg";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const services = [
+  {
+    icon: Home,
+    title: "Binnen- & Buitenreiniging",
+    desc: "Volledige reiniging van al uw ramen, binnen én buiten, voor een optimaal resultaat.",
+  },
+  {
+    icon: Sparkles,
+    title: "Kozijnen & Vensterbanken",
+    desc: "Grondige reiniging van kozijnen en vensterbanken, voor een complete frisse uitstraling.",
+  },
+  {
+    icon: Building2,
+    title: "Hoge & Moeilijk Bereikbare Ramen",
+    desc: "Met telescopische osmose-systemen reinigen we tot grote hoogtes — veilig en efficiënt.",
+  },
+  {
+    icon: Clock,
+    title: "Periodiek Onderhoud",
+    desc: "Vaste onderhoudsschema's voor woningen en bedrijfspanden. Altijd representatief.",
+  },
+];
+
+const reasons = [
+  { icon: HeartHandshake, title: "Klantgericht", desc: "Betrouwbare service, afgestemd op uw wensen." },
+  { icon: ShieldCheck, title: "Volledig Verzekerd", desc: "Veiligheid en kwaliteit staan altijd voorop." },
+  { icon: Clock, title: "Flexibele Afspraken", desc: "Plan op het moment dat ú het beste uitkomt." },
+  { icon: BadgeEuro, title: "Eerlijke Prijzen", desc: "Transparant, zonder verborgen kosten." },
+];
+
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      {/* NAV */}
+      <header className="fixed top-0 inset-x-0 z-50">
+        <div className="container mx-auto px-6 py-4">
+          <nav className="glass-panel rounded-full px-6 py-3 flex items-center justify-between shadow-glass">
+            <a href="#top" className="flex items-center gap-2 font-display text-lg font-semibold text-primary">
+              <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-hero shadow-glow">
+                <Droplets className="h-4 w-4 text-primary-foreground" />
+              </span>
+              CrystalClear
+            </a>
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/70">
+              <a href="#diensten" className="hover:text-primary transition-smooth">Diensten</a>
+              <a href="#waarom" className="hover:text-primary transition-smooth">Waarom Wij</a>
+              <a href="#contact" className="hover:text-primary transition-smooth">Contact</a>
+            </div>
+            <Button asChild size="sm" className="rounded-full bg-primary hover:bg-primary/90">
+              <a href="#contact">Offerte aanvragen</a>
+            </Button>
+          </nav>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-32">
+        {/* Decorative water drops */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute top-32 left-[8%] h-3 w-3 rounded-full bg-accent/40 animate-drip" style={{ animationDelay: "0s" }} />
+          <div className="absolute top-40 right-[12%] h-2 w-2 rounded-full bg-primary-glow/50 animate-drip" style={{ animationDelay: "1s" }} />
+          <div className="absolute top-64 left-[20%] h-2 w-2 rounded-full bg-accent/30 animate-drip" style={{ animationDelay: "2s" }} />
+        </div>
+
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Copy */}
+            <div className="animate-fade-up">
+              <div className="inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-xs font-medium text-primary mb-6 shadow-glass">
+                <Sparkles className="h-3.5 w-3.5 text-accent" />
+                100% streeploos met osmosewater
+              </div>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-primary text-balance leading-[1.05]">
+                Streeploos schone ramen,{" "}
+                <span className="relative inline-block">
+                  <span className="relative z-10 italic bg-gradient-water bg-clip-text text-transparent">elke keer weer</span>
+                </span>
+                .
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+                Hoogwaardige glasbewassing voor particulieren en bedrijven. Méér natuurlijk licht, een frissere uitstraling — zonder agressieve schoonmaakmiddelen.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button asChild size="lg" className="rounded-full bg-gradient-hero text-primary-foreground hover:opacity-95 shadow-elevated h-12 px-7 text-base">
+                  <a href="#contact">Vrijblijvende offerte <ArrowRight className="ml-1 h-4 w-4" /></a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full h-12 px-7 text-base border-primary/20 hover:bg-secondary">
+                  <a href="#diensten">Bekijk diensten</a>
+                </Button>
+              </div>
+              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                {["Verzekerd", "Eerlijk geprijsd", "Flexibel inplanbaar"].map((t) => (
+                  <span key={t} className="flex items-center gap-1.5">
+                    <Check className="h-4 w-4 text-accent" /> {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className="relative animate-fade-in">
+              <div className="absolute -inset-4 bg-gradient-hero rounded-[2rem] blur-2xl opacity-30" />
+              <div className="relative rounded-[2rem] overflow-hidden shadow-elevated animate-float">
+                <img
+                  src={heroImage}
+                  alt="Professionele glazenwasser reinigt grote glasgevel met osmosewater voor streeploos resultaat"
+                  width={1536}
+                  height={1024}
+                  className="w-full h-auto object-cover"
+                />
+                {/* Shine overlay */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <div className="absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-shine animate-shine" />
+                </div>
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-6 -left-6 glass-panel rounded-2xl px-5 py-4 shadow-glass hidden md:flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-hero">
+                  <Droplets className="h-5 w-5 text-primary-foreground" />
+                </div>
+                <div>
+                  <div className="font-semibold text-sm text-primary">Osmosewater</div>
+                  <div className="text-xs text-muted-foreground">Geen chemicaliën</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="diensten" className="py-20 md:py-28 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-14">
+            <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Onze diensten</div>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary tracking-tight text-balance">
+              Gespecialiseerd in elk soort glas.
+            </h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              Van knusse woonkamerramen tot imposante kantoorgevels — wij verzorgen het complete plaatje.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {services.map((s, i) => (
+              <div
+                key={s.title}
+                className="group relative rounded-3xl bg-card p-7 border border-border/60 hover:border-accent/40 hover:-translate-y-1 transition-smooth shadow-glass hover:shadow-elevated"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <div className="absolute top-0 right-0 h-24 w-24 bg-gradient-water rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-smooth" />
+                <div className="relative">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-glass border border-accent/20 mb-5">
+                    <s.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-primary mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OSMOSEWATER FEATURE */}
+      <section className="py-20 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-hero p-10 md:p-16 shadow-elevated">
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-10 left-10 h-40 w-40 rounded-full bg-accent blur-3xl" />
+              <div className="absolute bottom-10 right-20 h-60 w-60 rounded-full bg-primary-glow blur-3xl" />
+            </div>
+            <div className="relative grid md:grid-cols-2 gap-10 items-center text-primary-foreground">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur px-4 py-1.5 text-xs font-medium mb-5 border border-primary-foreground/20">
+                  <Droplets className="h-3.5 w-3.5" /> De CrystalClear methode
+                </div>
+                <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-balance leading-[1.1]">
+                  100% zuiver osmosewater. <em className="text-accent not-italic">Nul</em> chemicaliën.
+                </h2>
+                <p className="mt-5 text-primary-foreground/80 text-lg leading-relaxed">
+                  Door alle mineralen uit het water te filteren, droogt het op zonder strepen of vlekken na te laten. Beter voor uw ramen, beter voor het milieu.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { v: "100%", l: "Streeploos resultaat" },
+                  { v: "0", l: "Agressieve middelen" },
+                  { v: "20m+", l: "Werkhoogte" },
+                  { v: "5★", l: "Klantbeoordelingen" },
+                ].map((stat) => (
+                  <div key={stat.l} className="rounded-2xl bg-primary-foreground/10 backdrop-blur border border-primary-foreground/15 p-5">
+                    <div className="font-display text-3xl md:text-4xl font-semibold text-accent">{stat.v}</div>
+                    <div className="text-sm text-primary-foreground/80 mt-1">{stat.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY US */}
+      <section id="waarom" className="py-20 md:py-28">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-14">
+            <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Waarom CrystalClear</div>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary tracking-tight text-balance">
+              De verschillen die u meteen ziet.
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-3xl overflow-hidden border border-border">
+            {reasons.map((r) => (
+              <div key={r.title} className="bg-card p-8 hover:bg-secondary/50 transition-smooth">
+                <r.icon className="h-7 w-7 text-accent mb-5" strokeWidth={1.5} />
+                <h3 className="font-display text-xl font-semibold text-primary mb-2">{r.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT CTA */}
+      <section id="contact" className="py-20 md:py-28">
+        <div className="container mx-auto px-6">
+          <div className="relative max-w-4xl mx-auto text-center">
+            <h2 className="font-display text-4xl md:text-6xl font-semibold text-primary tracking-tight text-balance leading-[1.05]">
+              Klaar voor ramen die <em className="bg-gradient-water bg-clip-text text-transparent not-italic">stralen</em>?
+            </h2>
+            <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
+              Vraag vandaag nog een vrijblijvende offerte aan of plan eenvoudig online een afspraak.
+            </p>
+
+            <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+              <a
+                href="tel:+31000000000"
+                className="group glass-panel rounded-2xl p-6 text-left hover:shadow-elevated transition-smooth shadow-glass"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="h-10 w-10 rounded-full bg-gradient-hero flex items-center justify-center">
+                    <Phone className="h-4 w-4 text-primary-foreground" />
+                  </div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Bel ons</div>
+                </div>
+                <div className="font-display text-lg font-semibold text-primary group-hover:text-accent transition-smooth">
+                  [Telefoonnummer]
+                </div>
+              </a>
+              <a
+                href="mailto:info@crystalclear.nl"
+                className="group glass-panel rounded-2xl p-6 text-left hover:shadow-elevated transition-smooth shadow-glass"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="h-10 w-10 rounded-full bg-gradient-hero flex items-center justify-center">
+                    <Mail className="h-4 w-4 text-primary-foreground" />
+                  </div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Mail ons</div>
+                </div>
+                <div className="font-display text-lg font-semibold text-primary group-hover:text-accent transition-smooth">
+                  [E-mailadres]
+                </div>
+              </a>
+            </div>
+
+            <Button asChild size="lg" className="mt-8 rounded-full bg-gradient-hero text-primary-foreground hover:opacity-95 shadow-elevated h-13 px-8 text-base">
+              <a href="#contact">Plan een afspraak <ArrowRight className="ml-1 h-4 w-4" /></a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-border py-10">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2 font-display font-semibold text-primary">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-hero">
+              <Droplets className="h-3.5 w-3.5 text-primary-foreground" />
+            </span>
+            CrystalClear Glasbewassing
+          </div>
+          <div className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} CrystalClear. Streeploos schone ramen, elke keer weer.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
