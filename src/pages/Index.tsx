@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check } from "lucide-react";
+import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-window.jpg";
 
 const services = [
@@ -45,9 +46,10 @@ const Index = () => {
               </span>
               CrystalClear
             </a>
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/70">
+            <div className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground/70">
               <a href="#diensten" className="hover:text-primary transition-smooth">Diensten</a>
-              <a href="#waarom" className="hover:text-primary transition-smooth">Waarom Wij</a>
+              <Link to="/glasbewassing-heemskerk" className="hover:text-primary transition-smooth">Werkgebied</Link>
+              <Link to="/blog" className="hover:text-primary transition-smooth">Blog</Link>
               <a href="#contact" className="hover:text-primary transition-smooth">Contact</a>
             </div>
             <Button asChild size="sm" className="rounded-full bg-primary hover:bg-primary/90">
@@ -221,6 +223,74 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WERKGEBIED */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-12">
+            <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Ons werkgebied</div>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary tracking-tight text-balance">
+              Lokale glazenwasser in uw regio.
+            </h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              Bekijk de pagina voor uw plaats voor specifieke informatie en lokale dienstverlening.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              { name: "Heemskerk", to: "/glasbewassing-heemskerk", desc: "Glasbewassing voor woningen en bedrijven in heel Heemskerk." },
+              { name: "Uitgeest", to: "/glasbewassing-uitgeest", desc: "Streeploos schone ramen in Uitgeest en omliggende dorpen." },
+              { name: "Beverwijk", to: "/glasbewassing-beverwijk", desc: "Professionele glazenwasser actief in heel Beverwijk." },
+            ].map((c) => (
+              <Link
+                key={c.name}
+                to={c.to}
+                className="group rounded-3xl bg-card p-7 border border-border/60 hover:border-accent/40 hover:-translate-y-1 transition-smooth shadow-glass hover:shadow-elevated"
+              >
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-glass border border-accent/20 mb-5">
+                  <MapPin className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-primary mb-2">Glasbewassing {c.name}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                <span className="mt-4 inline-flex items-center text-sm font-medium text-accent group-hover:text-primary transition-smooth">
+                  Bekijk pagina <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BLOG TEASER */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-6">
+          <div className="rounded-[2rem] bg-secondary/60 border border-border p-10 md:p-14">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Kennisbank</div>
+                <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary tracking-tight text-balance">
+                  Antwoord op de meest gestelde vragen.
+                </h2>
+                <p className="mt-4 text-muted-foreground">
+                  Van tarieven tot frequenties — lees onze uitgebreide artikelen over glasbewassing.
+                </p>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { to: "/blog/wat-kost-glazenwasser", title: "Wat kost een glazenwasser in Nederland?" },
+                  { to: "/blog/hoe-vaak-ramen-laten-wassen", title: "Hoe vaak moet je ramen laten wassen?" },
+                  { to: "/blog/wat-is-osmose-glasbewassing", title: "Wat is osmose glasbewassing?" },
+                ].map((p) => (
+                  <Link key={p.to} to={p.to} className="group flex items-center justify-between gap-4 rounded-2xl bg-card p-4 border border-border/60 hover:border-accent/40 transition-smooth">
+                    <span className="font-medium text-primary group-hover:text-accent transition-smooth">{p.title}</span>
+                    <ArrowRight className="h-4 w-4 text-accent shrink-0" />
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
