@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check } from "lucide-react";
+import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-window.jpg";
 
 const services = [
