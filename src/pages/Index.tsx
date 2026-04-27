@@ -292,9 +292,6 @@ const Index = () => {
               </a>
             </div>
 
-            <Button asChild size="lg" className="mt-8 rounded-full bg-gradient-hero text-primary-foreground hover:opacity-95 shadow-elevated h-13 px-8 text-base">
-              <a href="#contact">Plan een afspraak <ArrowRight className="ml-1 h-4 w-4" /></a>
-            </Button>
           </div>
         </div>
       </section>
