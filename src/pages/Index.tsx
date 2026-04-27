@@ -255,7 +255,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="relative max-w-4xl mx-auto text-center">
             <h2 className="font-display text-4xl md:text-6xl font-semibold text-primary tracking-tight text-balance leading-[1.05]">
-              Klaar voor ramen die <em className="bg-gradient-water bg-clip-text text-transparent not-italic">stralen</em>?
+              Klaar voor ramen die <em className="not-italic font-semibold">stralen</em>?
             </h2>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
               Vraag vandaag nog een vrijblijvende offerte aan of plan eenvoudig online een afspraak.
