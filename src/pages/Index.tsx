@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check, MapPin } from "lucide-react";
+import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check, MapPin, Star, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-window.jpg";
 
@@ -48,8 +48,8 @@ const Index = () => {
             </a>
             <div className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground/70">
               <a href="#diensten" className="hover:text-primary transition-smooth">Diensten</a>
+              <a href="#reviews" className="hover:text-primary transition-smooth">Reviews</a>
               <Link to="/glasbewassing-heemskerk" className="hover:text-primary transition-smooth">Werkgebied</Link>
-              <Link to="/blog" className="hover:text-primary transition-smooth">Blog</Link>
               <a href="#contact" className="hover:text-primary transition-smooth">Contact</a>
             </div>
             <Button asChild size="sm" className="rounded-full bg-primary hover:bg-primary/90">
