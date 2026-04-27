@@ -77,11 +77,7 @@ const Index = () => {
                 100% streeploos met osmosewater
               </div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-primary text-balance leading-[1.05]">
-                Streeploos schone ramen,{" "}
-                <span className="relative inline-block">
-                  <span className="relative z-10 italic bg-gradient-water bg-clip-text text-transparent">elke keer weer</span>
-                </span>
-                .
+                Streeploos schone ramen, <em className="not-italic font-semibold">elke keer weer</em>.
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
                 Hoogwaardige glasbewassing voor particulieren en bedrijven. Méér natuurlijk licht, een frissere uitstraling — zonder agressieve schoonmaakmiddelen.
@@ -95,7 +91,7 @@ const Index = () => {
                 </Button>
               </div>
               <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                {["Verzekerd", "Eerlijk geprijsd", "Flexibel inplanbaar"].map((t) => (
+                {["Eerlijk geprijsd", "Flexibel inplanbaar"].map((t) => (
                   <span key={t} className="flex items-center gap-1.5">
                     <Check className="h-4 w-4 text-accent" /> {t}
                   </span>
@@ -119,85 +115,69 @@ const Index = () => {
                   <div className="absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-shine animate-shine" />
                 </div>
               </div>
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -left-6 glass-panel rounded-2xl px-5 py-4 shadow-glass hidden md:flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-hero">
-                  <Droplets className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <div className="font-semibold text-sm text-primary">Osmosewater</div>
-                  <div className="text-xs text-muted-foreground">Geen chemicaliën</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* GOOGLE REVIEWS */}
-      <section id="reviews" className="py-20 md:py-24">
+      {/* WHY US – compact strip */}
+      <section id="waarom" className="py-10 md:py-12 border-y border-border/60 bg-secondary/30">
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mb-12 text-center mx-auto">
-            <div className="inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-xs font-medium text-primary mb-5 shadow-glass">
-              <Star className="h-3.5 w-3.5 text-accent fill-accent" /> Google Reviews
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary tracking-tight text-balance">
-              Wat onze klanten zeggen.
-            </h2>
-            <div className="mt-5 flex items-center justify-center gap-2">
-              <div className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 text-accent fill-accent" />
-                ))}
-              </div>
-              <span className="font-display text-lg font-semibold text-primary">5.0</span>
-              <span className="text-sm text-muted-foreground">op basis van Google reviews</span>
-            </div>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              {
-                name: "Linda V.",
-                location: "Heemskerk",
-                text: "Echt streeploze ramen, ook bij grote glaspartijen. Vriendelijk, op tijd en netjes gewerkt. Een aanrader!",
-              },
-              {
-                name: "Mark B.",
-                location: "Beverwijk",
-                text: "Al maanden tevreden klant. Ramen blijven veel langer schoon en het ziet er fantastisch uit. Top service.",
-              },
-              {
-                name: "Sandra K.",
-                location: "Uitgeest",
-                text: "Snel een offerte ontvangen en kort daarna ingepland. Resultaat is precies zoals beloofd: kraakhelder.",
-              },
-            ].map((r) => (
-              <div
-                key={r.name}
-                className="relative rounded-3xl bg-card p-7 border border-border/60 shadow-glass hover:shadow-elevated hover:-translate-y-1 transition-smooth"
-              >
-                <Quote className="absolute top-6 right-6 h-6 w-6 text-accent/30" />
-                <div className="flex items-center gap-0.5 mb-4">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="h-4 w-4 text-accent fill-accent" />
-                  ))}
-                </div>
-                <p className="text-foreground/85 leading-relaxed text-sm">"{r.text}"</p>
-                <div className="mt-5 pt-5 border-t border-border/60">
-                  <div className="font-display font-semibold text-primary">{r.name}</div>
-                  <div className="text-xs text-muted-foreground">{r.location}</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {reasons.map((r) => (
+              <div key={r.title} className="flex items-start gap-3">
+                <r.icon className="h-5 w-5 text-accent shrink-0 mt-0.5" strokeWidth={1.75} />
+                <div>
+                  <div className="font-display text-sm font-semibold text-primary leading-tight">{r.title}</div>
+                  <div className="text-xs text-muted-foreground leading-snug mt-0.5">{r.desc}</div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10 text-center">
-            <Button asChild variant="outline" size="lg" className="rounded-full h-12 px-7 text-base border-primary/20 hover:bg-secondary">
-              <a href="https://www.google.com/search?q=CrystalClear+Glasbewassing+reviews" target="_blank" rel="noopener noreferrer">
-                Bekijk alle reviews op Google <ArrowRight className="ml-1 h-4 w-4" />
-              </a>
-            </Button>
+      {/* GOOGLE REVIEWS – compact horizontal */}
+      <section id="reviews" className="py-10 md:py-12">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="h-4 w-4 text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-display text-base font-semibold text-primary">5.0</span>
+              <span className="text-xs text-muted-foreground">Google Reviews</span>
+            </div>
+            <a
+              href="https://www.google.com/search?q=CrystalClear+Glasbewassing+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-accent hover:text-primary inline-flex items-center transition-smooth"
+            >
+              Bekijk alle reviews <ArrowRight className="ml-1 h-4 w-4" />
+            </a>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { name: "Linda V.", location: "Heemskerk", text: "Echt streeploze ramen, ook bij grote glaspartijen. Vriendelijk en netjes gewerkt." },
+              { name: "Mark B.", location: "Beverwijk", text: "Al maanden tevreden klant. Ramen blijven veel langer schoon. Top service." },
+              { name: "Sandra K.", location: "Uitgeest", text: "Snel een offerte ontvangen en kort daarna ingepland. Resultaat: kraakhelder." },
+            ].map((r) => (
+              <div key={r.name} className="rounded-2xl bg-card p-4 border border-border/60 shadow-glass">
+                <div className="flex items-center gap-0.5 mb-2">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className="h-3.5 w-3.5 text-accent fill-accent" />
+                  ))}
+                </div>
+                <p className="text-foreground/85 leading-snug text-sm">"{r.text}"</p>
+                <div className="mt-3 text-xs text-muted-foreground">
+                  <span className="font-semibold text-primary">{r.name}</span> · {r.location}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -236,26 +216,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WHY US */}
-      <section id="waarom" className="py-20 md:py-28">
-        <div className="container mx-auto px-6">
-          <div className="max-w-2xl mb-14">
-            <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Waarom CrystalClear</div>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary tracking-tight text-balance">
-              De verschillen die u meteen ziet.
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-3xl overflow-hidden border border-border">
-            {reasons.map((r) => (
-              <div key={r.title} className="bg-card p-8 hover:bg-secondary/50 transition-smooth">
-                <r.icon className="h-7 w-7 text-accent mb-5" strokeWidth={1.5} />
-                <h3 className="font-display text-xl font-semibold text-primary mb-2">{r.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* WERKGEBIED */}
       <section className="py-16 md:py-24">
