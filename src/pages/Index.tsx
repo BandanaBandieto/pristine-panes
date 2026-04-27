@@ -72,10 +72,6 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Copy */}
             <div className="animate-fade-up">
-              <div className="inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-xs font-medium text-primary mb-6 shadow-glass">
-                <Sparkles className="h-3.5 w-3.5 text-accent" />
-                100% streeploos met osmosewater
-              </div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-primary text-balance leading-[1.05]">
                 Streeploos schone ramen, <em className="not-italic font-semibold">elke keer weer</em>.
               </h1>
@@ -259,7 +255,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="relative max-w-4xl mx-auto text-center">
             <h2 className="font-display text-4xl md:text-6xl font-semibold text-primary tracking-tight text-balance leading-[1.05]">
-              Klaar voor ramen die <em className="bg-gradient-water bg-clip-text text-transparent not-italic">stralen</em>?
+              Klaar voor ramen die <em className="not-italic font-semibold">stralen</em>?
             </h2>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
               Vraag vandaag nog een vrijblijvende offerte aan of plan eenvoudig online een afspraak.
