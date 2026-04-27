@@ -134,6 +134,74 @@ const Index = () => {
         </div>
       </section>
 
+      {/* GOOGLE REVIEWS */}
+      <section id="reviews" className="py-20 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-12 text-center mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-xs font-medium text-primary mb-5 shadow-glass">
+              <Star className="h-3.5 w-3.5 text-accent fill-accent" /> Google Reviews
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary tracking-tight text-balance">
+              Wat onze klanten zeggen.
+            </h2>
+            <div className="mt-5 flex items-center justify-center gap-2">
+              <div className="flex items-center gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="h-5 w-5 text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-display text-lg font-semibold text-primary">5.0</span>
+              <span className="text-sm text-muted-foreground">op basis van Google reviews</span>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                name: "Linda V.",
+                location: "Heemskerk",
+                text: "Echt streeploze ramen, ook bij grote glaspartijen. Vriendelijk, op tijd en netjes gewerkt. Een aanrader!",
+              },
+              {
+                name: "Mark B.",
+                location: "Beverwijk",
+                text: "Al maanden tevreden klant. Ramen blijven veel langer schoon en het ziet er fantastisch uit. Top service.",
+              },
+              {
+                name: "Sandra K.",
+                location: "Uitgeest",
+                text: "Snel een offerte ontvangen en kort daarna ingepland. Resultaat is precies zoals beloofd: kraakhelder.",
+              },
+            ].map((r) => (
+              <div
+                key={r.name}
+                className="relative rounded-3xl bg-card p-7 border border-border/60 shadow-glass hover:shadow-elevated hover:-translate-y-1 transition-smooth"
+              >
+                <Quote className="absolute top-6 right-6 h-6 w-6 text-accent/30" />
+                <div className="flex items-center gap-0.5 mb-4">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className="h-4 w-4 text-accent fill-accent" />
+                  ))}
+                </div>
+                <p className="text-foreground/85 leading-relaxed text-sm">"{r.text}"</p>
+                <div className="mt-5 pt-5 border-t border-border/60">
+                  <div className="font-display font-semibold text-primary">{r.name}</div>
+                  <div className="text-xs text-muted-foreground">{r.location}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Button asChild variant="outline" size="lg" className="rounded-full h-12 px-7 text-base border-primary/20 hover:bg-secondary">
+              <a href="https://www.google.com/search?q=CrystalClear+Glasbewassing+reviews" target="_blank" rel="noopener noreferrer">
+                Bekijk alle reviews op Google <ArrowRight className="ml-1 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section id="diensten" className="py-20 md:py-28 relative">
         <div className="container mx-auto px-6">
