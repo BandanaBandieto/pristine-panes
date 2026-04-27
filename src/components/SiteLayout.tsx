@@ -25,7 +25,6 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
               <Link to="/glasbewassing-heemskerk" className="hover:text-primary transition-smooth">Heemskerk</Link>
               <Link to="/glasbewassing-uitgeest" className="hover:text-primary transition-smooth">Uitgeest</Link>
               <Link to="/glasbewassing-beverwijk" className="hover:text-primary transition-smooth">Beverwijk</Link>
-              <Link to="/blog" className="hover:text-primary transition-smooth">Blog</Link>
             </div>
             <Button asChild size="sm" className="rounded-full bg-primary hover:bg-primary/90">
               <Link to="/#contact">Offerte</Link>
@@ -79,7 +78,7 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
 
       {/* FOOTER */}
       <footer className="border-t border-border py-10">
-        <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm">
+        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-8 text-sm">
           <div>
             <Link to="/" className="flex items-center gap-2 font-display font-semibold text-primary mb-3">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-hero">
@@ -95,14 +94,6 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
               <li><Link to="/glasbewassing-heemskerk" className="hover:text-primary">Glasbewassing Heemskerk</Link></li>
               <li><Link to="/glasbewassing-uitgeest" className="hover:text-primary">Glasbewassing Uitgeest</Link></li>
               <li><Link to="/glasbewassing-beverwijk" className="hover:text-primary">Glasbewassing Beverwijk</Link></li>
-            </ul>
-          </div>
-          <div>
-            <div className="font-semibold text-primary mb-3">Kennisbank</div>
-            <ul className="space-y-2 text-muted-foreground">
-              <li><Link to="/blog/wat-kost-glazenwasser" className="hover:text-primary">Wat kost een glazenwasser?</Link></li>
-              <li><Link to="/blog/hoe-vaak-ramen-laten-wassen" className="hover:text-primary">Hoe vaak ramen laten wassen?</Link></li>
-              <li><Link to="/blog/wat-is-osmose-glasbewassing" className="hover:text-primary">Wat is osmose glasbewassing?</Link></li>
             </ul>
           </div>
         </div>
