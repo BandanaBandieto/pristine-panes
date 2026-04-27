@@ -236,44 +236,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* OSMOSEWATER FEATURE */}
-      <section className="py-20 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-hero p-10 md:p-16 shadow-elevated">
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-10 left-10 h-40 w-40 rounded-full bg-accent blur-3xl" />
-              <div className="absolute bottom-10 right-20 h-60 w-60 rounded-full bg-primary-glow blur-3xl" />
-            </div>
-            <div className="relative grid md:grid-cols-2 gap-10 items-center text-primary-foreground">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur px-4 py-1.5 text-xs font-medium mb-5 border border-primary-foreground/20">
-                  <Droplets className="h-3.5 w-3.5" /> De CrystalClear methode
-                </div>
-                <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-balance leading-[1.1]">
-                  100% zuiver osmosewater. <em className="text-accent not-italic">Nul</em> chemicaliën.
-                </h2>
-                <p className="mt-5 text-primary-foreground/80 text-lg leading-relaxed">
-                  Door alle mineralen uit het water te filteren, droogt het op zonder strepen of vlekken na te laten. Beter voor uw ramen, beter voor het milieu.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { v: "100%", l: "Streeploos resultaat" },
-                  { v: "0", l: "Agressieve middelen" },
-                  { v: "20m+", l: "Werkhoogte" },
-                  { v: "5★", l: "Klantbeoordelingen" },
-                ].map((stat) => (
-                  <div key={stat.l} className="rounded-2xl bg-primary-foreground/10 backdrop-blur border border-primary-foreground/15 p-5">
-                    <div className="font-display text-3xl md:text-4xl font-semibold text-accent">{stat.v}</div>
-                    <div className="text-sm text-primary-foreground/80 mt-1">{stat.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* WHY US */}
       <section id="waarom" className="py-20 md:py-28">
         <div className="container mx-auto px-6">
