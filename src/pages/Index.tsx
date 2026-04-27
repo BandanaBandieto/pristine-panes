@@ -72,10 +72,6 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Copy */}
             <div className="animate-fade-up">
-              <div className="inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-xs font-medium text-primary mb-6 shadow-glass">
-                <Sparkles className="h-3.5 w-3.5 text-accent" />
-                100% streeploos met osmosewater
-              </div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-primary text-balance leading-[1.05]">
                 Streeploos schone ramen, <em className="not-italic font-semibold">elke keer weer</em>.
               </h1>
