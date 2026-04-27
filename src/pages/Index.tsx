@@ -294,37 +294,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* BLOG TEASER */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-6">
-          <div className="rounded-[2rem] bg-secondary/60 border border-border p-10 md:p-14">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Kennisbank</div>
-                <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary tracking-tight text-balance">
-                  Antwoord op de meest gestelde vragen.
-                </h2>
-                <p className="mt-4 text-muted-foreground">
-                  Van tarieven tot frequenties — lees onze uitgebreide artikelen over glasbewassing.
-                </p>
-              </div>
-              <div className="space-y-3">
-                {[
-                  { to: "/blog/wat-kost-glazenwasser", title: "Wat kost een glazenwasser in Nederland?" },
-                  { to: "/blog/hoe-vaak-ramen-laten-wassen", title: "Hoe vaak moet je ramen laten wassen?" },
-                  { to: "/blog/wat-is-osmose-glasbewassing", title: "Wat is osmose glasbewassing?" },
-                ].map((p) => (
-                  <Link key={p.to} to={p.to} className="group flex items-center justify-between gap-4 rounded-2xl bg-card p-4 border border-border/60 hover:border-accent/40 transition-smooth">
-                    <span className="font-medium text-primary group-hover:text-accent transition-smooth">{p.title}</span>
-                    <ArrowRight className="h-4 w-4 text-accent shrink-0" />
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CONTACT CTA */}
       <section id="contact" className="py-20 md:py-28">
         <div className="container mx-auto px-6">
