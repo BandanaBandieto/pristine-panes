@@ -91,7 +91,7 @@ const Index = () => {
                 </Button>
               </div>
               <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                {["Verzekerd", "Eerlijk geprijsd", "Flexibel inplanbaar"].map((t) => (
+                {["Eerlijk geprijsd", "Flexibel inplanbaar"].map((t) => (
                   <span key={t} className="flex items-center gap-1.5">
                     <Check className="h-4 w-4 text-accent" /> {t}
                   </span>
