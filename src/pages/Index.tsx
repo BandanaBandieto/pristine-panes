@@ -104,6 +104,10 @@ const Index = () => {
                   alt="Professionele glazenwasser reinigt grote glasgevel met osmosewater voor streeploos resultaat"
                   width={1536}
                   height={1024}
+                  loading="eager"
+                  decoding="async"
+                  // @ts-expect-error fetchpriority is valid HTML but missing from React types in some versions
+                  fetchpriority="high"
                   className="w-full h-auto object-cover"
                 />
                 {/* Shine overlay */}
