@@ -103,7 +103,9 @@ const Index = () => {
               <div className="absolute -inset-4 bg-gradient-hero rounded-[2rem] blur-2xl opacity-30" />
               <div className="relative rounded-[2rem] overflow-hidden shadow-elevated animate-float">
                 <img
-                  src={heroImage}
+                  src={heroImage768}
+                  srcSet={`${heroImage768} 768w, ${heroImage1280} 1280w, ${heroImage1536} 1536w`}
+                  sizes="(max-width: 1024px) 92vw, 640px"
                   alt="Professionele glazenwasser reinigt grote glasgevel met osmosewater voor streeploos resultaat"
                   width={1536}
                   height={1024}
