@@ -115,16 +115,7 @@ const Index = () => {
                   <div className="absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-shine animate-shine" />
                 </div>
               </div>
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -left-6 glass-panel rounded-2xl px-5 py-4 shadow-glass hidden md:flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-hero">
-                  <Droplets className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <div className="font-semibold text-sm text-primary">Osmosewater</div>
-                  <div className="text-xs text-muted-foreground">Geen chemicaliën</div>
-                </div>
-              </div>
+            </div>
             </div>
           </div>
         </div>
