@@ -216,26 +216,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WHY US */}
-      <section id="waarom" className="py-20 md:py-28">
-        <div className="container mx-auto px-6">
-          <div className="max-w-2xl mb-14">
-            <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Waarom CrystalClear</div>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary tracking-tight text-balance">
-              De verschillen die u meteen ziet.
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-3xl overflow-hidden border border-border">
-            {reasons.map((r) => (
-              <div key={r.title} className="bg-card p-8 hover:bg-secondary/50 transition-smooth">
-                <r.icon className="h-7 w-7 text-accent mb-5" strokeWidth={1.5} />
-                <h3 className="font-display text-xl font-semibold text-primary mb-2">{r.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* WERKGEBIED */}
       <section className="py-16 md:py-24">
