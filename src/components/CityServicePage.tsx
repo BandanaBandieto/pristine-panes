@@ -188,16 +188,15 @@ const CityServicePage = ({ data }: { data: CityData }) => {
       {/* WERKGEBIED */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="rounded-[2rem] bg-gradient-hero p-10 md:p-14 text-primary-foreground shadow-elevated relative overflow-hidden">
-            <div className="absolute top-0 right-0 h-60 w-60 rounded-full bg-accent/30 blur-3xl" />
+          <div className="rounded-[2rem] bg-secondary/60 border border-border p-10 md:p-14 relative overflow-hidden">
             <div className="relative max-w-3xl">
-              <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur px-4 py-1.5 text-xs font-medium mb-5 border border-primary-foreground/20">
-                <MapPin className="h-3.5 w-3.5" /> Ons werkgebied
+              <div className="inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-xs font-medium text-primary mb-5 shadow-glass">
+                <MapPin className="h-3.5 w-3.5 text-accent" /> Ons werkgebied
               </div>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance leading-[1.1]">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance leading-[1.1] text-primary">
                 Glazenwasser in {city} en omliggende gemeenten
               </h2>
-              <p className="mt-5 text-primary-foreground/85 text-lg leading-relaxed">
+              <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
                 Naast {city} zijn wij actief in {nearby.slice(0, -1).join(", ")} en {nearby.slice(-1)}. Zit uw woning of bedrijfspand binnen onze regio? Dan komen wij graag langs voor een vrijblijvende kennismaking en offerte.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
@@ -208,7 +207,7 @@ const CityServicePage = ({ data }: { data: CityData }) => {
                     Beverwijk: "/glasbewassing-beverwijk",
                   };
                   const link = knownSlugs[c];
-                  const cls = "rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 backdrop-blur border border-primary-foreground/20 px-4 py-1.5 text-sm transition-smooth";
+                  const cls = "rounded-full bg-card hover:bg-accent/10 border border-border px-4 py-1.5 text-sm text-foreground transition-smooth";
                   return link ? (
                     <Link key={c} to={link} className={cls}>{c}</Link>
                   ) : (
