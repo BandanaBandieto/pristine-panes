@@ -77,11 +77,7 @@ const Index = () => {
                 100% streeploos met osmosewater
               </div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-primary text-balance leading-[1.05]">
-                Streeploos schone ramen,{" "}
-                <span className="relative inline-block">
-                  <span className="relative z-10 italic bg-gradient-water bg-clip-text text-transparent">elke keer weer</span>
-                </span>
-                .
+                Streeploos schone ramen, <em className="not-italic font-semibold">elke keer weer</em>.
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
                 Hoogwaardige glasbewassing voor particulieren en bedrijven. Méér natuurlijk licht, een frissere uitstraling — zonder agressieve schoonmaakmiddelen.
