@@ -109,6 +109,7 @@ const Index = () => {
                 </div>
               </SheetContent>
             </Sheet>
+          </nav>
         </div>
       </header>
 
