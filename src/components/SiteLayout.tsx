@@ -74,6 +74,7 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
                 </div>
               </SheetContent>
             </Sheet>
+          </nav>
         </div>
       </header>
 
