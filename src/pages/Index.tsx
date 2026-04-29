@@ -53,7 +53,7 @@ const Index = () => {
             <div className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground/70">
               <a href="#diensten" className="hover:text-primary transition-smooth">Diensten</a>
               <a href="#reviews" className="hover:text-primary transition-smooth">Reviews</a>
-              <Link to="/glasbewassing-heemskerk" className="hover:text-primary transition-smooth">Werkgebied</Link>
+              <a href="#werkgebied" className="hover:text-primary transition-smooth">Locaties</a>
               <a href="#contact" className="hover:text-primary transition-smooth">Contact</a>
             </div>
             <Button asChild size="sm" className="hidden md:inline-flex rounded-full bg-primary hover:bg-primary/90">
