@@ -87,13 +87,7 @@ const Index = () => {
                       <a href="#reviews" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Reviews</a>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link to="/glasbewassing-heemskerk" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Heemskerk</Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Link to="/glasbewassing-uitgeest" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Uitgeest</Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Link to="/glasbewassing-beverwijk" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Beverwijk</Link>
+                      <a href="#werkgebied" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Locaties</a>
                     </SheetClose>
                     <SheetClose asChild>
                       <a href="#contact" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Contact</a>
