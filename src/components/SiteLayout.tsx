@@ -27,10 +27,53 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
               <Link to="/glasbewassing-uitgeest" className="hover:text-primary transition-smooth">Uitgeest</Link>
               <Link to="/glasbewassing-beverwijk" className="hover:text-primary transition-smooth">Beverwijk</Link>
             </div>
-            <Button asChild size="sm" className="rounded-full bg-primary hover:bg-primary/90">
+            <Button asChild size="sm" className="hidden md:inline-flex rounded-full bg-primary hover:bg-primary/90">
               <Link to="/#contact">Offerte</Link>
             </Button>
-          </nav>
+
+            {/* Mobile menu */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <button
+                  type="button"
+                  aria-label="Open menu"
+                  className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth"
+                >
+                  <Menu className="h-4 w-4" />
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[80%] max-w-sm bg-background border-l border-border p-0">
+                <div className="flex flex-col h-full p-6">
+                  <Link to="/" className="flex items-center gap-2 font-display text-lg font-semibold text-primary mb-10">
+                    <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-hero shadow-glow">
+                      <Droplets className="h-4 w-4 text-primary-foreground" />
+                    </span>
+                    CrystalClear
+                  </Link>
+                  <nav className="flex flex-col gap-1 text-base font-medium">
+                    <SheetClose asChild>
+                      <Link to="/" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Home</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/glasbewassing-heemskerk" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Heemskerk</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/glasbewassing-uitgeest" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Uitgeest</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/glasbewassing-beverwijk" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Beverwijk</Link>
+                    </SheetClose>
+                  </nav>
+                  <div className="mt-auto pt-8">
+                    <SheetClose asChild>
+                      <Button asChild size="lg" className="w-full rounded-full bg-gradient-hero text-primary-foreground hover:opacity-95 shadow-elevated">
+                        <Link to="/#contact">Offerte aanvragen <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                      </Button>
+                    </SheetClose>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
         </div>
       </header>
 
