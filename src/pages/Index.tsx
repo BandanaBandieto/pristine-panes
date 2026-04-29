@@ -268,7 +268,7 @@ const Index = () => {
 
 
       {/* WERKGEBIED */}
-      <section className="py-16 md:py-24">
+      <section id="werkgebied" className="py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mb-12">
             <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">Ons werkgebied</div>
@@ -276,29 +276,25 @@ const Index = () => {
               Lokale glazenwasser in uw regio.
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              Bekijk de pagina voor uw plaats voor specifieke informatie en lokale dienstverlening.
+              Wij zijn actief in heel Noord-Holland en omstreken — neem contact op voor uw locatie.
             </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-5">
             {[
-              { name: "Heemskerk", to: "/glasbewassing-heemskerk", desc: "Glasbewassing voor woningen en bedrijven in heel Heemskerk." },
-              { name: "Uitgeest", to: "/glasbewassing-uitgeest", desc: "Streeploos schone ramen in Uitgeest en omliggende dorpen." },
-              { name: "Beverwijk", to: "/glasbewassing-beverwijk", desc: "Professionele glazenwasser actief in heel Beverwijk." },
+              { name: "Heemskerk", desc: "Glasbewassing voor woningen en bedrijven in heel Heemskerk." },
+              { name: "Uitgeest", desc: "Streeploos schone ramen in Uitgeest en omliggende dorpen." },
+              { name: "Beverwijk", desc: "Professionele glazenwasser actief in heel Beverwijk." },
             ].map((c) => (
-              <Link
+              <div
                 key={c.name}
-                to={c.to}
-                className="group rounded-3xl bg-card p-7 border border-border/60 hover:border-accent/40 hover:-translate-y-1 transition-smooth shadow-glass hover:shadow-elevated"
+                className="rounded-3xl bg-card p-7 border border-border/60 shadow-glass"
               >
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-glass border border-accent/20 mb-5">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-primary mb-2">Glasbewassing {c.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
-                <span className="mt-4 inline-flex items-center text-sm font-medium text-accent group-hover:text-primary transition-smooth">
-                  Bekijk pagina <ArrowRight className="ml-1 h-4 w-4" />
-                </span>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
