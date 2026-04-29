@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check, MapPin, Star } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check, MapPin, Star, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-window.jpg";
 import heroImage768 from "@/assets/hero-window-768.webp";
