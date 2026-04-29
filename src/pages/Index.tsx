@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check, MapPin, Star } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Sparkles, Droplets, Building2, Home, ShieldCheck, Clock, BadgeEuro, HeartHandshake, Phone, Mail, ArrowRight, Check, MapPin, Star, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-window.jpg";
 import heroImage768 from "@/assets/hero-window-768.webp";
@@ -55,9 +56,59 @@ const Index = () => {
               <Link to="/glasbewassing-heemskerk" className="hover:text-primary transition-smooth">Werkgebied</Link>
               <a href="#contact" className="hover:text-primary transition-smooth">Contact</a>
             </div>
-            <Button asChild size="sm" className="rounded-full bg-primary hover:bg-primary/90">
+            <Button asChild size="sm" className="hidden md:inline-flex rounded-full bg-primary hover:bg-primary/90">
               <a href="#contact">Offerte aanvragen</a>
             </Button>
+
+            {/* Mobile menu */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <button
+                  type="button"
+                  aria-label="Open menu"
+                  className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth"
+                >
+                  <Menu className="h-4 w-4" />
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[80%] max-w-sm bg-background border-l border-border p-0">
+                <div className="flex flex-col h-full p-6">
+                  <Link to="/" className="flex items-center gap-2 font-display text-lg font-semibold text-primary mb-10">
+                    <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-hero shadow-glow">
+                      <Droplets className="h-4 w-4 text-primary-foreground" />
+                    </span>
+                    CrystalClear
+                  </Link>
+                  <nav className="flex flex-col gap-1 text-base font-medium">
+                    <SheetClose asChild>
+                      <a href="#diensten" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Diensten</a>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <a href="#reviews" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Reviews</a>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/glasbewassing-heemskerk" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Heemskerk</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/glasbewassing-uitgeest" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Uitgeest</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/glasbewassing-beverwijk" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Beverwijk</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <a href="#contact" className="py-3 px-3 -mx-3 rounded-xl text-foreground/80 hover:bg-secondary hover:text-primary transition-smooth">Contact</a>
+                    </SheetClose>
+                  </nav>
+                  <div className="mt-auto pt-8">
+                    <SheetClose asChild>
+                      <Button asChild size="lg" className="w-full rounded-full bg-gradient-hero text-primary-foreground hover:opacity-95 shadow-elevated">
+                        <a href="#contact">Offerte aanvragen <ArrowRight className="ml-1 h-4 w-4" /></a>
+                      </Button>
+                    </SheetClose>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </nav>
         </div>
       </header>
