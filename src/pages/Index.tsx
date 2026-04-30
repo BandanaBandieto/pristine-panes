@@ -6,6 +6,7 @@ import heroImage from "@/assets/hero-window.jpg";
 import heroImage768 from "@/assets/hero-window-768.webp";
 import heroImage1280 from "@/assets/hero-window-1280.webp";
 import heroImage1536 from "@/assets/hero-window-1536.webp";
+import { business } from "@/business";
 
 const services = [
   {
@@ -48,7 +49,7 @@ const Index = () => {
               <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-hero shadow-glow">
                 <Droplets className="h-4 w-4 text-primary-foreground" />
               </span>
-              CrystalClear
+              {business.name}
             </a>
             <div className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground/70">
               <a href="#diensten" className="hover:text-primary transition-smooth">Diensten</a>
@@ -77,7 +78,7 @@ const Index = () => {
                     <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-hero shadow-glow">
                       <Droplets className="h-4 w-4 text-primary-foreground" />
                     </span>
-                    CrystalClear
+                    {business.name}
                   </Link>
                   <nav className="flex flex-col gap-1 text-base font-medium">
                     <SheetClose asChild>
@@ -201,7 +202,7 @@ const Index = () => {
               <span className="text-xs text-muted-foreground">Google Reviews</span>
             </div>
             <a
-              href="https://www.google.com/search?q=CrystalClear+Glasbewassing+reviews"
+              href="https://www.google.com/search?q={business.name}+Glasbewassing+reviews"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium text-accent hover:text-primary inline-flex items-center transition-smooth"
@@ -276,7 +277,7 @@ const Index = () => {
               Lokale glazenwasser in uw regio.
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              Wij zijn actief in heel Noord-Holland en omstreken — neem contact op voor uw locatie.
+              Wij zijn actief in heel {business.region} en omstreken — neem contact op voor uw locatie.
             </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-5">
@@ -313,7 +314,7 @@ const Index = () => {
 
             <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
               <a
-                href="tel:+31000000000"
+                href="tel:${business.phone}"
                 className="group glass-panel rounded-2xl p-6 text-left hover:shadow-elevated transition-smooth shadow-glass"
               >
                 <div className="flex items-center gap-3 mb-2">
@@ -323,11 +324,11 @@ const Index = () => {
                   <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Bel ons</div>
                 </div>
                 <div className="font-display text-lg font-semibold text-primary group-hover:text-accent transition-smooth">
-                  [Telefoonnummer]
+                  {business.phoneDisplay}
                 </div>
               </a>
               <a
-                href="mailto:info@crystalclear.nl"
+                href="mailto:info@{business.name}.nl"
                 className="group glass-panel rounded-2xl p-6 text-left hover:shadow-elevated transition-smooth shadow-glass"
               >
                 <div className="flex items-center gap-3 mb-2">
@@ -337,7 +338,7 @@ const Index = () => {
                   <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Mail ons</div>
                 </div>
                 <div className="font-display text-lg font-semibold text-primary group-hover:text-accent transition-smooth">
-                  [E-mailadres]
+                  {business.emailDisplay}
                 </div>
               </a>
             </div>
@@ -353,10 +354,10 @@ const Index = () => {
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-hero">
               <Droplets className="h-3.5 w-3.5 text-primary-foreground" />
             </span>
-            CrystalClear Glasbewassing
+            {business.name} {business.serviceType}
           </div>
           <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} CrystalClear. Streeploos schone ramen, elke keer weer.
+            © {new Date().getFullYear()} {business.name}. Streeploos schone ramen, elke keer weer.
           </div>
         </div>
       </footer>
