@@ -5,7 +5,7 @@
 export const business = {
 
   // --- COMPANY ---
-  name: "CrystalClear",
+  name: "TestBedrijf",
   serviceType: "Glasbewassing",
 
   // --- CONTACT ---
